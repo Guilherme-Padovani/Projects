@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Tarefas — JavaScript</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app">
+    <h1>Lista de Tarefas</h1>
+    <p class="subtitle">Projeto simples em JavaScript — adicionar, concluir e remover tarefas.</p>
+
+    <form id="form-tarefa">
+      <input type="text" id="input-tarefa" placeholder="Adicionar nova tarefa..." autocomplete="off" required>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <ul id="lista-tarefas"></ul>
+
+    <p id="contador" class="contador">0 tarefas pendentes</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

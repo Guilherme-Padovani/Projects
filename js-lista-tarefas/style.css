@@ -1,0 +1,107 @@
+:root {
+  --green: #2E6B52;
+  --cream: #F6F5F1;
+  --ink: #1F1F1F;
+  --gray: #8A8A8A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+  color: var(--green);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+#form-tarefa {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+#input-tarefa {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+#form-tarefa button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--green);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#form-tarefa button:hover { background: #245942; }
+
+#lista-tarefas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#lista-tarefas li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+#lista-tarefas li span {
+  cursor: pointer;
+  flex: 1;
+}
+
+#lista-tarefas li.concluida span {
+  text-decoration: line-through;
+  color: var(--gray);
+}
+
+#lista-tarefas li button {
+  border: none;
+  background: none;
+  color: #C0392B;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.contador {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--gray);
+  text-align: center;
+}
