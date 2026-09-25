@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Chamados | Help Desk{% endblock %}
+
+{% block content %}
+<section class="cabecalho-pagina">
+    <div>
+        <p class="rotulo">PAINEL DE SUPORTE</p>
+        <h1>Chamados</h1>
+        <p>Acompanhe, pesquise e filtre as solicitações cadastradas.</p>
+    </div>
+</section>
+
+<form class="filtros" method="get">
+    <input type="search" name="q" value="{{ pesquisa }}" placeholder="Pesquisar título, descrição ou categoria">
+
+    <select name="status">
+        <option value="">Todos os status</option>
+        {% for item in status_opcoes %}
+            <option value="{{ item }}" {% if status_selecionado == item %}selected{% endif %}>{{ item }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="prioridade">
+        <option value="">Todas as prioridades</option>
+        {% for item in prioridades %}
+            <option value="{{ item }}" {% if prioridade_selecionada == item %}selected{% endif %}>{{ item }}</option>
+        {% endfor %}
+    </select>
+
+    <button class="botao" type="submit">Filtrar</button>
+    <a class="botao secundario" href="{{ url_for('index') }}">Limpar</a>
+</form>
+
+{% if chamados %}
+<div class="grade-chamados">
+    {% for chamado in chamados %}
+        <article class="card">
+            <div class="card-topo">
+                <span class="id">#{{ chamado['id'] }}</span>
+                <span class="status status-{{ chamado['status']|lower|replace(' ', '-') }}">{{ chamado['status'] }}</span>
+            </div>
+            <h2>{{ chamado['titulo'] }}</h2>
+            <p>{{ chamado['descricao'][:120] }}{% if chamado['descricao']|length > 120 %}...{% endif %}</p>
+            <div class="metadados">
+                <span>{{ chamado['categoria'] }}</span>
+                <span>Prioridade: <strong>{{ chamado['prioridade'] }}</strong></span>
+            </div>
+            <a class="link" href="{{ url_for('detalhes_chamado', chamado_id=chamado['id']) }}">Ver detalhes →</a>
+        </article>
+    {% endfor %}
+</div>
+{% else %}
+<div class="vazio">
+    <h2>Nenhum chamado encontrado</h2>
+    <p>Crie um chamado ou altere os filtros da pesquisa.</p>
+</div>
+{% endif %}
+{% endblock %}
