@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Página não encontrada{% endblock %}
+{% block content %}
+<div class="vazio">
+    <h1>404</h1>
+    <h2>Página ou chamado não encontrado</h2>
+    <a class="botao" href="{{ url_for('index') }}">Voltar ao início</a>
+</div>
+{% endblock %}
