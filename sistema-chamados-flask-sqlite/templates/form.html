@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo_pagina }} | Help Desk{% endblock %}
+
+{% block content %}
+<div class="pagina-formulario">
+    <div class="cabecalho-pagina">
+        <div>
+            <p class="rotulo">GERENCIAMENTO DE CHAMADOS</p>
+            <h1>{{ titulo_pagina }}</h1>
+        </div>
+    </div>
+
+    <form class="formulario" method="post">
+        <label>
+            Título
+            <input type="text" name="titulo" maxlength="120" required
+                   value="{{ chamado['titulo'] if chamado else '' }}">
+        </label>
+
+        <label>
+            Descrição
+            <textarea name="descricao" rows="6" required>{{ chamado['descricao'] if chamado else '' }}</textarea>
+        </label>
+
+        <div class="linha-formulario">
+            <label>
+                Categoria
+                <input type="text" name="categoria" maxlength="80" required
+                       placeholder="Ex.: Sistema, Acesso, Hardware"
+                       value="{{ chamado['categoria'] if chamado else '' }}">
+            </label>
+
+            <label>
+                Prioridade
+                <select name="prioridade" required>
+                    {% for item in prioridades %}
+                        <option value="{{ item }}"
+                            {% if chamado and chamado['prioridade'] == item %}selected{% endif %}>
+                            {{ item }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+
+        <label>
+            Status
+            <select name="status" required>
+                {% for item in status_opcoes %}
+                    <option value="{{ item }}"
+                        {% if chamado and chamado['status'] == item %}selected{% elif novo and item == 'Aberto' %}selected{% endif %}>
+                        {{ item }}
+                    </option>
+                {% endfor %}
+            </select>
+        </label>
+
+        <div class="acoes">
+            <button class="botao" type="submit">Salvar chamado</button>
+            <a class="botao secundario" href="{{ url_for('index') }}">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
