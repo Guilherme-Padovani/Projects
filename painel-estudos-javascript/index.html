@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Painel interativo para organizar sessões de estudo e acompanhar horas estudadas.">
+  <title>Foco | Meu painel de estudos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Informações do painel">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">◈</span> foco<span class="brand-period">.</span></a>
+      <div class="sidebar-note">
+        <span class="eyebrow">SEU ESPAÇO DE EVOLUÇÃO</span>
+        <h2>Um passo<br>de cada vez.</h2>
+        <p>Registre cada sessão e veja para onde está indo o seu tempo de estudo.</p>
+        <div class="note-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <p class="sidebar-footer">Projeto demonstrativo · JavaScript puro</p>
+    </aside>
+
+    <main id="inicio" class="content">
+      <header class="topbar">
+        <div><span class="eyebrow eyebrow-dark">PAINEL DE ACOMPANHAMENTO</span><h1>Meu ritmo de estudos<span class="dot">.</span></h1><p class="subtitle">Organize sua rotina e acompanhe seu progresso.</p></div>
+        <span class="status"><span class="status-dot" aria-hidden="true"></span> Dados salvos neste navegador</span>
+      </header>
+
+      <section class="stats" aria-label="Indicadores dos estudos">
+        <article class="stat"><span class="stat-label">TEMPO TOTAL</span><div class="stat-value" id="total-tempo">0h 00min</div><span class="stat-sub">Somando todas as sessões</span></article>
+        <article class="stat"><span class="stat-label">SESSÕES REGISTRADAS</span><div class="stat-value" id="total-sessoes">0</div><span class="stat-sub">Atividades de estudo</span></article>
+        <article class="stat"><span class="stat-label">MÉDIA POR SESSÃO</span><div class="stat-value" id="media-sessao">0min</div><span class="stat-sub">Tempo dedicado por sessão</span></article>
+      </section>
+
+      <div class="workspace">
+        <section class="panel form-panel" aria-labelledby="titulo-adicionar">
+          <div class="panel-heading"><div><span class="eyebrow eyebrow-dark">REGISTRAR</span><h2 id="titulo-adicionar">Nova sessão</h2></div><span class="panel-icon" aria-hidden="true">＋</span></div>
+          <form id="form-sessao" novalidate>
+            <label for="assunto">O que você estudou?</label>
+            <input id="assunto" name="assunto" placeholder="Ex.: Funções em Python" maxlength="70" required>
+            <div class="form-grid">
+              <div><label for="materia">Área</label><select id="materia" name="materia"><option>Python</option><option>JavaScript</option><option>HTML e CSS</option><option>Outros</option></select></div>
+              <div><label for="minutos">Duração (min)</label><input id="minutos" name="minutos" type="number" min="1" max="600" step="1" placeholder="Ex.: 50" required></div>
+            </div>
+            <label for="data">Data do estudo</label>
+            <input id="data" name="data" type="date" required>
+            <p id="mensagem-form" class="form-message" role="alert" aria-live="polite"></p>
+            <button class="primary-btn" type="submit">Adicionar sessão <span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="form-caption">Dica: comece registrando 20 a 40 minutos de um assunto por dia.</p>
+        </section>
+
+        <section class="panel graph-panel" aria-labelledby="titulo-areas">
+          <div class="panel-heading"><div><span class="eyebrow eyebrow-dark">VISÃO GERAL</span><h2 id="titulo-areas">Tempo por área</h2></div></div>
+          <p class="graph-description">Distribuição das horas estudadas por tecnologia.</p>
+          <div id="grafico" class="chart-list" aria-live="polite"></div>
+          <div class="goal"><div class="goal-label"><span>Meta ilustrativa: 10 horas no total</span><strong id="meta-texto">0%</strong></div><div class="goal-track"><div id="meta-barra" class="goal-fill"></div></div><span class="goal-help">A meta é apenas um exemplo para acompanhar progresso.</span></div>
+        </section>
+      </div>
+
+      <section class="panel history-panel" aria-labelledby="titulo-historico">
+        <div class="history-heading"><div><span class="eyebrow eyebrow-dark">SEU HISTÓRICO</span><h2 id="titulo-historico">Sessões registradas</h2></div><button id="limpar-tudo" class="text-btn" type="button">Limpar histórico</button></div>
+        <div class="filters"><label class="search-box"><span class="visually-hidden">Pesquisar sessões</span><span aria-hidden="true">⌕</span><input id="busca" type="search" placeholder="Buscar assunto..."></label><label class="filter-box"><span class="visually-hidden">Filtrar por área</span><select id="filtro-area"><option value="Todas">Todas as áreas</option><option>Python</option><option>JavaScript</option><option>HTML e CSS</option><option>Outros</option></select></label></div>
+        <ul id="lista-sessoes" class="sessions" aria-live="polite"></ul>
+        <p id="vazio" class="empty" hidden>Nenhuma sessão encontrada. Adicione uma sessão ou altere os filtros.</p>
+        <div class="history-footer"><span id="contador-lista">0 sessões exibidas</span><button id="carregar-exemplos" class="text-btn" type="button">Carregar dados de exemplo</button></div>
+      </section>
+      <footer class="page-footer">Feito com HTML, CSS e JavaScript, sem frameworks ou APIs externas.</footer>
+    </main>
+  </div>
+</body>
+</html>

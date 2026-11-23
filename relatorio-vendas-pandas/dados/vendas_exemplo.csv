@@ -1,0 +1,49 @@
+data,produto,categoria,quantidade,preco_unitario,regiao
+2026-01-23,Luminária LED,Utilidades,3,75.00,Santos
+2026-01-03,Suporte notebook,Acessórios,1,65.00,Santos
+2026-01-11,Caneca cerâmica,Utilidades,3,34.90,Santos
+2026-01-06,Garrafa térmica,Utilidades,2,58.90,Campinas
+2026-01-03,Luminária LED,Utilidades,6,75.00,São Paulo
+2026-01-25,Garrafa térmica,Utilidades,4,58.90,São Paulo
+2026-01-12,Luminária LED,Utilidades,1,75.00,São José dos Campos
+2026-01-05,Mousepad,Acessórios,5,19.90,Santos
+2026-01-23,Suporte notebook,Acessórios,5,65.00,Campinas
+2026-01-13,Caderno pontilhado,Papelaria,3,29.50,São Paulo
+2026-01-03,Caneca cerâmica,Utilidades,2,34.90,São José dos Campos
+2026-01-09,Caneta gel,Papelaria,5,8.90,São Paulo
+2026-02-21,Caneta gel,Papelaria,1,8.90,São José dos Campos
+2026-02-12,Caneta gel,Papelaria,5,8.90,São José dos Campos
+2026-02-10,Caderno pontilhado,Papelaria,4,29.50,São José dos Campos
+2026-02-01,Organizador de cabos,Acessórios,3,24.00,Campinas
+2026-02-06,Mousepad,Acessórios,4,19.90,Santos
+2026-02-02,Caneca cerâmica,Utilidades,5,34.90,Campinas
+2026-02-07,Caneta gel,Papelaria,6,8.90,São José dos Campos
+2026-02-03,Caneca cerâmica,Utilidades,3,34.90,Santos
+2026-02-13,Planner de mesa,Papelaria,3,32.90,São Paulo
+2026-02-09,Mousepad,Acessórios,5,19.90,São Paulo
+2026-02-15,Mousepad,Acessórios,4,19.90,Santos
+2026-02-04,Caneca cerâmica,Utilidades,5,34.90,São Paulo
+2026-03-07,Mousepad,Acessórios,4,19.90,São Paulo
+2026-03-19,Planner de mesa,Papelaria,1,32.90,Santos
+2026-03-10,Suporte notebook,Acessórios,6,65.00,São Paulo
+2026-03-18,Planner de mesa,Papelaria,4,32.90,São José dos Campos
+2026-03-24,Luminária LED,Utilidades,1,75.00,Campinas
+2026-03-24,Organizador de cabos,Acessórios,1,24.00,Campinas
+2026-03-13,Suporte notebook,Acessórios,2,65.00,Santos
+2026-03-03,Garrafa térmica,Utilidades,3,58.90,São Paulo
+2026-03-03,Caneta gel,Papelaria,1,8.90,Santos
+2026-03-05,Suporte notebook,Acessórios,4,65.00,São José dos Campos
+2026-03-08,Caderno pontilhado,Papelaria,5,29.50,Santos
+2026-03-01,Mousepad,Acessórios,6,19.90,São José dos Campos
+2026-04-10,Caneta gel,Papelaria,5,8.90,São José dos Campos
+2026-04-14,Suporte notebook,Acessórios,3,65.00,Campinas
+2026-04-26,Caneca cerâmica,Utilidades,2,34.90,Santos
+2026-04-08,Planner de mesa,Papelaria,1,32.90,São José dos Campos
+2026-04-08,Caderno pontilhado,Papelaria,4,29.50,Santos
+2026-04-02,Mousepad,Acessórios,2,19.90,São Paulo
+2026-04-03,Garrafa térmica,Utilidades,3,58.90,Campinas
+2026-04-25,Caneta gel,Papelaria,5,8.90,São Paulo
+2026-04-15,Caneta gel,Papelaria,1,8.90,São José dos Campos
+2026-04-08,Planner de mesa,Papelaria,3,32.90,Campinas
+2026-04-18,Caderno pontilhado,Papelaria,5,29.50,São José dos Campos
+2026-04-11,Organizador de cabos,Acessórios,6,24.00,Campinas
